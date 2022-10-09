@@ -1,5 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
+import { TestComponent } from './test/test.component';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+  @ViewChild(TestComponent)
+  testcomponent: TestComponent = new TestComponent;
   title = 'Frontend';
   constructor(private http: HttpClient) {}
 
@@ -19,6 +22,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
+    console.log(this.testcomponent)
   }
 
 }
