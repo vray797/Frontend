@@ -15,12 +15,10 @@ export class AppComponent implements OnInit{
   getData(){
     return this.http.get("https://api.publicapis.org/entries").subscribe((res) => {
       this.data = res
-      console.log(this.data)
     })
   }
 
   ngOnInit() {
-    this.getData()
   }
 
 }
